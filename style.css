@@ -1,27 +1,83 @@
-@font-face{font-family:Cinzel;font-weight:600;src:url(fonts/Cinzel-600.ttf)}@font-face{font-family:Inter;font-weight:400;src:url(fonts/Inter-400.ttf)}@font-face{font-family:Inter;font-weight:600;src:url(fonts/Inter-600.ttf)}
-:root{--bg:#07070f;--panel:#12112a;--line:#26244a;--text:#e9f3ff;--muted:#9aa6c4;--glow:#8fdcff;--accent:#7a4dff}
+@font-face{font-family:"IM Fell English SC";src:url(fonts/IMFellEnglishSC-400.ttf)}
+@font-face{font-family:"Almendra SC";src:url(fonts/AlmendraSC-400.ttf)}
+@font-face{font-family:"Uncial Antiqua";src:url(fonts/UncialAntiqua-400.ttf)}
+@font-face{font-family:"Cinzel Decorative";font-weight:700;src:url(fonts/CinzelDecorative-700.ttf)}
+@font-face{font-family:Alegreya;font-weight:400;src:url(fonts/Alegreya-400.ttf)}
+@font-face{font-family:Alegreya;font-weight:700;src:url(fonts/Alegreya-700.ttf)}
+@font-face{font-family:"Alegreya SC";font-weight:500;src:url(fonts/AlegreyaSC-500.ttf)}
+
+:root{
+  --display:"Uncial Antiqua",Georgia,serif;   /* the wordmark lettering; swap here */
+  --ink:#0d0b12;--ink2:#16121f;--vellum:#efe2c4;--text:#d8ccb0;--faded:#9b8f78;
+  --gold:#c9a75a;--gold-dim:#6d5a33;--frost:#8fdcff;
+}
 *{box-sizing:border-box}
-body{margin:0;background:radial-gradient(1200px 700px at 50% -10%,#1b1640 0,var(--bg) 60%) fixed;color:var(--text);font:17px/1.6 Inter,system-ui,-apple-system,sans-serif}
-main{max-width:860px;margin:0 auto;padding:48px 16px 80px}
-a{color:var(--glow)}
-h1,h2{font-family:Cinzel,Georgia,serif;letter-spacing:.02em;line-height:1.2}
-h1{font-size:clamp(34px,6vw,54px);margin:.2em 0}
-h2{font-size:24px;margin-top:2em;color:var(--glow)}
-.hero{text-align:center;padding:24px 0 8px}
-.hero img{width:180px;height:180px;filter:drop-shadow(0 0 40px rgba(57,182,255,.35))}
-.lede{font-size:21px;color:var(--muted);max-width:620px;margin:0 auto}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:40px}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px}
-.card h3{margin:0 0 6px;font-size:18px}
-.card p{margin:0;color:var(--muted);font-size:15px}
-.btn{display:inline-block;margin-top:24px;padding:12px 22px;border-radius:12px;background:var(--text);color:#0b0a1c;font-weight:600;text-decoration:none}
-nav{display:flex;gap:20px;justify-content:center;margin-top:56px;font-size:14px;color:var(--muted)}
-nav a{color:var(--muted)}
-kbd{background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:14px}
-table{border-collapse:collapse;width:100%}td{padding:6px 8px;border-bottom:1px solid var(--line)}
-.small{color:var(--muted);font-size:14px}
-form.card{display:grid;gap:14px;margin-top:12px}
-label{display:grid;gap:6px;font-size:15px;color:var(--muted)}
-input,textarea{font:inherit;color:var(--text);background:#0b0a1c;border:1px solid var(--line);border-radius:10px;padding:10px 12px;width:100%}
-input:focus,textarea:focus{outline:2px solid var(--glow);outline-offset:1px}
-form .btn{border:0;cursor:pointer;justify-self:start;margin-top:4px}
+html{background:var(--ink)}
+body{margin:0;color:var(--text);font:19px/1.65 Alegreya,Georgia,serif;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .9 0 0 0 0 .8 0 0 0 0 .6 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
+    radial-gradient(120% 80% at 50% 0,#211a2e 0,var(--ink) 70%);}
+main{max-width:880px;margin:0 auto;padding:56px 20px 72px}
+a{color:var(--frost);text-decoration-color:rgba(143,220,255,.4);text-underline-offset:3px}
+a:hover{text-decoration-color:var(--frost)}
+
+/* masthead */
+.mast{text-align:center}
+.mast img{width:148px;height:148px}
+.mast .word{font-family:var(--display);font-weight:400;font-size:clamp(44px,8vw,78px);line-height:1;color:var(--vellum);margin:18px 0 6px;letter-spacing:.01em}
+.mast .tag{font-family:"Alegreya SC",serif;font-size:20px;letter-spacing:.12em;color:var(--gold)}
+.small-mast{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--vellum)}
+.small-mast img{width:48px;height:48px}
+.small-mast span{font-family:var(--display);font-size:28px}
+
+/* ornamental rule */
+.rule{display:flex;align-items:center;gap:14px;margin:40px auto;max-width:520px;color:var(--gold)}
+.rule::before,.rule::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim),var(--gold-dim),transparent)}
+.rule svg{width:22px;height:22px}
+
+h1,h2{font-family:var(--display);font-weight:400;color:var(--vellum);line-height:1.15}
+h1{font-size:46px;margin:.4em 0 .2em}
+h2{font-size:30px;margin:2.2em 0 .5em}
+.lede{font-size:22px;color:var(--text);max-width:640px;margin:0 auto;text-align:center}
+
+/* call to action */
+.cta{display:inline-block;margin-top:28px;padding:12px 26px;border:1px solid var(--gold);color:var(--vellum);
+  font-family:"Alegreya SC",serif;letter-spacing:.08em;text-decoration:none;background:rgba(201,167,90,.08);
+  box-shadow:inset 0 0 0 3px var(--ink),inset 0 0 0 4px var(--gold-dim)}
+.cta:hover{background:rgba(201,167,90,.16)}
+
+/* screenshot plate */
+.plate{margin:44px 0 0;padding:10px;border:1px solid var(--gold-dim);background:var(--ink2);position:relative}
+.plate img{display:block;width:100%;height:auto}
+.plate::before,.plate::after{content:"";position:absolute;width:18px;height:18px;border:2px solid var(--gold)}
+.plate::before{top:-5px;left:-5px;border-right:0;border-bottom:0}
+.plate::after{bottom:-5px;right:-5px;border-left:0;border-top:0}
+.plate figcaption{font-size:15px;color:var(--faded);text-align:center;padding-top:8px;font-style:italic}
+
+/* feature list, written like entries in a spellbook */
+.tome{display:grid;grid-template-columns:1fr 1fr;gap:6px 48px;margin-top:8px}
+.tome div{padding:14px 0;border-bottom:1px dashed #3a3226}
+.tome h3{margin:0 0 2px;font-family:"Alegreya SC",serif;font-weight:500;font-size:21px;color:var(--vellum);letter-spacing:.03em}
+.tome h3::before{content:"◆";color:var(--gold);font-size:12px;margin-right:10px;vertical-align:3px}
+.tome p{margin:0;color:var(--text)}
+@media (max-width:640px){.tome{grid-template-columns:1fr}}
+
+ol,ul{padding-left:1.3em}li{margin:.3em 0}
+kbd{font:15px/1 Alegreya,serif;border:1px solid var(--gold-dim);border-bottom-width:2px;border-radius:4px;padding:2px 7px;color:var(--vellum);background:var(--ink2)}
+table{border-collapse:collapse;width:100%}td{padding:8px 6px;border-bottom:1px dashed #3a3226}
+dt{font-weight:700;color:var(--vellum);margin-top:1em}dd{margin:0}
+
+/* contact form */
+form{display:grid;gap:16px;margin-top:12px;padding:24px;border:1px solid var(--gold-dim);background:rgba(22,18,31,.7)}
+label{display:grid;gap:6px;font-family:"Alegreya SC",serif;font-size:16px;letter-spacing:.05em;color:var(--gold)}
+input,textarea{font:18px Alegreya,serif;color:var(--vellum);background:var(--ink);border:1px solid #3a3226;border-radius:2px;padding:10px 12px;width:100%}
+input:focus,textarea:focus{outline:1px solid var(--frost);border-color:var(--frost)}
+form .cta{margin-top:4px;justify-self:start;cursor:pointer;font-size:17px}
+.note{font-size:15px;color:var(--faded);margin:0}
+
+footer{margin-top:72px;text-align:center;font-size:15px;color:var(--faded)}
+footer nav{display:flex;gap:26px;justify-content:center;font-family:"Alegreya SC",serif;letter-spacing:.06em;margin-bottom:8px}
+footer a{color:var(--faded);text-decoration:none}footer a:hover{color:var(--vellum)}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+.top nav{display:flex;gap:22px;font-family:"Alegreya SC",serif;letter-spacing:.06em}
+.top nav a{color:var(--faded);text-decoration:none}.top nav a:hover{color:var(--vellum)}
