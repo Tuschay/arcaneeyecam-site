@@ -48,7 +48,7 @@ h2{font-size:30px;margin:2.2em 0 .5em}
 
 /* screenshot plate */
 .plate{margin:44px 0 0;padding:10px;border:1px solid var(--gold-dim);background:var(--ink2);position:relative}
-.plate img{display:block;width:100%;height:auto}
+.plate img,.plate video{display:block;width:100%;height:auto}
 .plate::before,.plate::after{content:"";position:absolute;width:18px;height:18px;border:2px solid var(--gold)}
 .plate::before{top:-5px;left:-5px;border-right:0;border-bottom:0}
 .plate::after{bottom:-5px;right:-5px;border-left:0;border-top:0}
