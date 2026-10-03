@@ -82,3 +82,4 @@ footer a{color:var(--faded);text-decoration:none}footer a:hover{color:var(--vell
 footer a.tip{display:block;margin-top:6px;font-size:12px;letter-spacing:.08em;color:var(--gold-dim);opacity:.55}
 footer a.tip:hover{opacity:1;color:var(--gold)}
 .windows{margin-top:56px}.steps{padding-left:1.4em}.steps li{margin:0 0 10px}
+.nowrap{white-space:nowrap}
